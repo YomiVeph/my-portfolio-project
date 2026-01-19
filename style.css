@@ -18,6 +18,7 @@ body {
   border: 2rem solid;
   border-image: linear-gradient(135deg, #6b6bd6, #ff5f6d) 1;
   border-radius: 2.4rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -32,6 +33,7 @@ header {
   background-color: #e6e6e6;
   padding: 4rem;
   z-index: 1000;
+  transition: background-color 0.5s ease;
 }
 
 .name {
@@ -64,10 +66,12 @@ header {
   font-size: 2rem;
   transition: color 0.3s ease;
   cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-.switch:hover i {
+.switch i:hover {
   color: #fff;
+  transform: rotate(20deg);
 }
 
 .about {
@@ -77,6 +81,9 @@ header {
   align-items: center;
   color: rgb(135, 142, 153);
   padding: 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
 }
 
 .about-content h1 {
@@ -128,7 +135,7 @@ header {
   cursor: pointer;
   text-decoration: none;
   box-shadow: 5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
 .social-btn:hover {
@@ -158,6 +165,9 @@ header {
   gap: 4rem;
   margin-top: 5rem;
   align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
 }
 
 .section-title {
@@ -178,6 +188,8 @@ header {
   flex-direction: column;
   font-family: sans-serif;
   margin: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .project-card:hover {
@@ -265,7 +277,7 @@ header {
   text-decoration: none;
   box-shadow: 5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem, color 0.3s ease;
 }
 
 .link-btn:hover {
@@ -281,6 +293,9 @@ header {
   align-items: center;
   gap: 4rem;
   margin-top: 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
 }
 
 .skills-container {
@@ -300,7 +315,7 @@ header {
   border-radius: 1.2rem;
   padding: 2rem;
   box-shadow: 0.5rem 0.5rem 0.15rem #d1d9e6, -0.5rem -0.5rem 0.15rem #ffffff;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .skill-card:hover {
@@ -318,6 +333,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
 }
 
 .contact-wrapper {
@@ -460,4 +478,205 @@ footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 1.6rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e6e6e6;
+  border-image: linear-gradient(135deg, #ff5f6d, #6b6bd6) 1;
+}
+
+body.dark-mode header {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .link a {
+  color: #e6e6e6;
+}
+
+body.dark-mode .link a:hover {
+  color: #ff4b5c;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .skill-card,
+body.dark-mode .card,
+body.dark-mode .link-btn,
+body.dark-mode .social-btn,
+body.dark-mode .btn {
+  background: #1e1e1e;
+  box-shadow: 5px 5px 15px #0a0a0a, -5px -5px 15px #333;
+  color: #e6e6e6;
+}
+
+body.dark-mode .link-btn:hover,
+body.dark-mode .social-btn:hover,
+body.dark-mode .btn:hover {
+  background-color: #ff004f;
+  color: #fff;
+}
+
+body.dark-mode .about-content p,
+body.dark-mode .head-rate h3,
+body.dark-mode .head-rate .rate,
+body.dark-mode .project-card p,
+body.dark-mode .section-title,
+body.dark-mode .profile-name,
+body.dark-mode .profile-role,
+body.dark-mode .profile-desc,
+body.dark-mode .contact-info p,
+body.dark-mode .social-info span {
+  color: #e6e6e6;
+}
+
+/* ==========================
+   FADE-IN CLASS
+========================== */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 64rem) {
+  header {
+    padding: 3rem;
+  }
+
+  .link {
+    width: 40rem;
+    font-size: 1.5rem;
+  }
+
+  .about {
+    padding: 3rem;
+    gap: 4rem;
+  }
+
+  .about-content h1 {
+    font-size: 4rem;
+  }
+
+  .about-content p {
+    font-size: 1.7rem;
+  }
+
+  .home-img img {
+    height: 40rem;
+  }
+
+  /* Projects */
+  .project-card {
+    width: 30rem;
+  }
+
+  .thumbnail img {
+    height: 32rem;
+  }
+
+  /* Skills */
+  .skills-container {
+    gap: 4rem;
+  }
+
+  /* Contact */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 40rem) {
+  body {
+    padding: 1rem;
+    border-width: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .link {
+    width: 100%;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .about-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .about-content h3 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1.6rem;
+  }
+
+  .my-contact {
+    justify-content: center;
+  }
+
+  .home-img img {
+    height: 32rem;
+  }
+
+  /* Projects */
+  .project-container {
+    padding: 1rem;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .thumbnail img {
+    height: 28rem;
+  }
+
+  .link-demo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .link-btn {
+    width: 100%;
+  }
+
+  /* Skills */
+  .skills-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* Contact */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-img img {
+    height: 28rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 1.4rem;
+  }
 }
